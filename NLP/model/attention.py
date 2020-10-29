@@ -10,7 +10,7 @@ class Attention(nn.Module):
         self.nonlinear = FCNet([v_dim + q_dim, num_hid])
         self.linear = weight_norm(nn.Linear(num_hid, 1), dim=None)
 
-    def forward(self, v, q):
+    def forward(self, v, q, v_mask=True, mask_with=-float('inf')):
         """
         v: [batch, k, vdim]
         q: [batch, qdim]
