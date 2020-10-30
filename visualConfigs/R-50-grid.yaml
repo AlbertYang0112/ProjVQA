@@ -1,0 +1,5 @@
+_BASE_: "Base-RCNN-grid.yaml"
+MODEL:
+  WEIGHTS: "./visualModels/R-50.pth"
+  RESNETS:
+    DEPTH: 50
